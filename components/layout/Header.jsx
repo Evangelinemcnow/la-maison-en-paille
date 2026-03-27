@@ -22,14 +22,34 @@ const nav = [
   {
     label: "Découvrir",
     children: [
-      { label: "Porte ouverte : Poêle de masse", href: "/ressources" },
-      { label: "Poêle de masse", href: "/ressources" },
-      { label: "Vos réalisations", href: "/realisations" },
+      { label: "Un poêle de masse, c'est quoi ?", href: "/ressources" },
+      { label: "Poêle de masse Oxalibre", href: "/ressources/oxalibre" },
+      { label: "Actualités", href: "/realisations" },
+      { label: "A propos", href: "/ressources/about" },
+      { label: "Vidéos", href: "/ressources/videos" },
+      { label: "Des pros sont passés par ici", href: "/ressources/professionnels" },
     ],
   },
-  { label: "Livres", href: "/livres" },
-  { label: "Blog", href: "/actualites" },
-  { label: "André de Bouter", href: "/andre-de-bouter" },
+  {
+    label: "Livres",
+    href: "/livres",
+    children: [
+      { label: "Bâtir en paille", href: "/livres/batir-en-paille" },
+      { label: "Petite botte de paille", href: "/livres/petite-botte-de-paille" },
+      { label: "Concevoir en botte de paille", href: "/livres/concevoir-en-botte-de-paille" },
+    ],
+  },
+  {
+    label: "André de Bouter",
+    href: "/andre-de-bouter",
+    children: [
+      { label: "Je me présente", href: "/andre-de-bouter/je-me-presente" },
+      { label: "CV poêle de masse", href: "/andre-de-bouter/cv-pdm" },
+      { label: "CV paille, terre et chaux", href: "/andre-de-bouter/cv-ptc" },
+      { label: "Galeries", href: "/andre-de-bouter/galeries" },
+    ],
+  },
+  { label: "S'inscrire", href: "/inscription" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -39,20 +59,20 @@ export default function Header() {
 
   return (
     <header className="bg-[#3d1a0e] sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-6 flex items-center h-[80px] gap-10">
+      <div className="max-w-7xl mx-auto px-6 flex items-center h-[80px] gap-10 rounded-xl">
         {/* Logo carré blanc */}
         <Link
           href="/"
-          className="flex-shrink-0 bg-white p-2 block"
+          className="flex-shrink-0 bg-transparent  block"
           style={{ lineHeight: 0 }}
         >
           <Image
             src={LOGO}
             alt="La Maison en Paille"
-            width={100}
-            height={80}
-            className="object-contain"
-            style={{ width: "auto", height: "64px" }}
+            width={450}
+            height={400}
+            className="object-contain rounded-xl mt-12"
+            style={{ width: "auto", height: "120px" }}
             unoptimized
           />
         </Link>
