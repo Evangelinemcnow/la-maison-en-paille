@@ -9,7 +9,7 @@ export default function sitemap() {
     { url: `${baseUrl}/actualites`, lastModified: new Date(), priority: 0.7 },
     { url: `${baseUrl}/realisations`, lastModified: new Date(), priority: 0.6 },
     { url: `${baseUrl}/ressources`, lastModified: new Date(), priority: 0.6 },
-    { url: `${baseUrl}/andre-de-bouter`, lastModified: new Date(), priority: 0.7 },
+    { url: `${baseUrl}/a-propos`, lastModified: new Date(), priority: 0.7 },
     { url: `${baseUrl}/contact`, lastModified: new Date(), priority: 0.8 },
   ]
 }

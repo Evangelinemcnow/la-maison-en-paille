@@ -20,7 +20,7 @@ la-maison-en-paille/
 │   │   ├── actualites/page.jsx       → /actualites
 │   │   ├── realisations/page.jsx     → /realisations
 │   │   ├── ressources/page.jsx       → /ressources
-│   │   ├── andre-de-bouter/page.jsx  → /andre-de-bouter
+│   │   ├── a-propos/page.jsx         → /a-propos
 │   │   └── contact/page.jsx          → /contact
 │   │
 │   ├── (admin)/                    ← Pages protégées (JWT)
@@ -32,7 +32,7 @@ la-maison-en-paille/
 │   │       ├── stages/               CRUD stages
 │   │       ├── inscriptions/         Gestion inscriptions
 │   │       └── realisations/         Upload photos
-│   │
+│   │   ├── a-propos/page.jsx  → /a-propos
 │   ├── api/                        ← API Routes (back-end)
 │   │   ├── auth/route.js             POST login / DELETE logout
 │   │   ├── actualites/route.js       GET list · POST create

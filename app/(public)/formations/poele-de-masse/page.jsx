@@ -6,10 +6,10 @@ export const metadata = {
   description: '1 heure de feu = 24h de confort. Stage 3 jours pour construire votre poêle de masse. André de Bouter, Charente (16). 380 €.',
 }
 
-const IMG_BG      = 'https://static.wixstatic.com/media/3e33e8_d95d5a776364461ab0e8f33345cb57f1~mv2.jpg/v1/fill/w_1240,h_1748,al_c,q_90,enc_avif,quality_auto/3e33e8_d95d5a776364461ab0e8f33345cb57f1~mv2.jpg'
+const IMG_BG = 'https://static.wixstatic.com/media/3e33e8_d95d5a776364461ab0e8f33345cb57f1~mv2.jpg/v1/fill/w_1240,h_1748,al_c,q_90,enc_avif,quality_auto/3e33e8_d95d5a776364461ab0e8f33345cb57f1~mv2.jpg'
 const IMG_BANDEAU = 'https://static.wixstatic.com/media/3e33e8_d74efc6c8f1f4e95800c902d07a36027~mv2.jpg/v1/fill/w_381,h_1920,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3e33e8_d74efc6c8f1f4e95800c902d07a36027~mv2.jpg'
-const IMG_GIF     = 'https://static.wixstatic.com/media/f4c673_9e107a544f7a4064a4a68de072001bac~mv2.gif'
-const IMG_PORTE   = 'https://static.wixstatic.com/media/f4c673_bfb45c777c99497f897266941e875ff9~mv2.png/v1/fill/w_475,h_285,al_c,q_85,enc_avif,quality_auto/f4c673_bfb45c777c99497f897266941e875ff9~mv2.png'
+const IMG_GIF = 'https://static.wixstatic.com/media/f4c673_9e107a544f7a4064a4a68de072001bac~mv2.gif'
+const IMG_PORTE = 'https://static.wixstatic.com/media/f4c673_bfb45c777c99497f897266941e875ff9~mv2.png/v1/fill/w_475,h_285,al_c,q_85,enc_avif,quality_auto/f4c673_bfb45c777c99497f897266941e875ff9~mv2.png'
 
 const PHOTOS = [
   'https://static.wixstatic.com/media/457787_0ad1e98972b741d88fc67ca7f6fcbe84~mv2_d_3264_2176_s_2.jpg/v1/fill/w_980,h_653,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/457787_0ad1e98972b741d88fc67ca7f6fcbe84~mv2_d_3264_2176_s_2.jpg',
@@ -43,11 +43,11 @@ export default function PoeleDeMassePage() {
               Stage 3 jours — 380 €
             </p>
             <h1 className="font-raleway font-black text-white uppercase leading-tight"
-                style={{ fontSize: 'clamp(2rem, 6vw, 4rem)', letterSpacing: '0.06em', textShadow: '0 2px 8px rgba(0,0,0,0.4)' }}>
+              style={{ fontSize: 'clamp(2rem, 6vw, 4rem)', letterSpacing: '0.06em', textShadow: '0 2px 8px rgba(0,0,0,0.4)' }}>
               Poêle de Masse
             </h1>
             <p className="font-raleway font-bold text-white uppercase mt-3"
-               style={{ fontSize: '0.6rem', letterSpacing: '0.2em' }}>
+              style={{ fontSize: '0.6rem', letterSpacing: '0.2em' }}>
               1 heure de feu = 24h de confort
             </p>
             <Link href="/contact" className="btn-terracotta mt-6">Je m&apos;inscris</Link>
@@ -110,9 +110,8 @@ export default function PoeleDeMassePage() {
               ].map(({ d, s }) => (
                 <div key={d} className="flex items-center justify-between border-b border-[#f0e8d8] py-2">
                   <span className="font-raleway font-bold text-sm text-[#3d1a0e]">{d}</span>
-                  <span className={`font-raleway font-bold text-[9px] tracking-[0.15em] uppercase px-2 py-1 ${
-                    s === 'complet' ? 'bg-red-100 text-red-700' : 'bg-[#4a6741] text-white'
-                  }`}>{s === 'complet' ? 'Complet' : 'Ouvert'}</span>
+                  <span className={`font-raleway font-bold text-[9px] tracking-[0.15em] uppercase px-2 py-1 ${s === 'complet' ? 'bg-red-100 text-red-700' : 'bg-[#4a6741] text-white'
+                    }`}>{s === 'complet' ? 'Complet' : 'Ouvert'}</span>
                 </div>
               ))}
               <p className="text-xs text-[#4a4a4a] mt-4 mb-5">

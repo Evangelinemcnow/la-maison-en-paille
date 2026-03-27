@@ -20,35 +20,27 @@ const nav = [
     ],
   },
   {
-    label: "Découvrir",
+    label: "A propos",
+    href: "/a propos",
+    children: [
+      { label: "Je me présente", href: "/a propos/je-me-presente" },
+      { label: "CV poêle de masse", href: "/a propos/cv-pdm" },
+      { label: "CV paille, terre et chaux", href: "/a propos/cv-ptc" },
+      { label: "Galeries", href: "/a propos/galeries" },
+    ],
+  },
+  {
+    label: "Partage",
     children: [
       { label: "Un poêle de masse, c'est quoi ?", href: "/ressources" },
       { label: "Poêle de masse Oxalibre", href: "/ressources/oxalibre" },
       { label: "Actualités", href: "/realisations" },
-      { label: "A propos", href: "/ressources/about" },
+      { label: "Galeries ?", href: "/ressources/about" },
       { label: "Vidéos", href: "/ressources/videos" },
       { label: "Des pros sont passés par ici", href: "/ressources/professionnels" },
     ],
   },
-  {
-    label: "Livres",
-    href: "/livres",
-    children: [
-      { label: "Bâtir en paille", href: "/livres/batir-en-paille" },
-      { label: "Petite botte de paille", href: "/livres/petite-botte-de-paille" },
-      { label: "Concevoir en botte de paille", href: "/livres/concevoir-en-botte-de-paille" },
-    ],
-  },
-  {
-    label: "André de Bouter",
-    href: "/andre-de-bouter",
-    children: [
-      { label: "Je me présente", href: "/andre-de-bouter/je-me-presente" },
-      { label: "CV poêle de masse", href: "/andre-de-bouter/cv-pdm" },
-      { label: "CV paille, terre et chaux", href: "/andre-de-bouter/cv-ptc" },
-      { label: "Galeries", href: "/andre-de-bouter/galeries" },
-    ],
-  },
+  { label: "Livres", href: "/livres" },
   { label: "S'inscrire", href: "/inscription" },
   { label: "Contact", href: "/contact" },
 ];
