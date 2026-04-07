@@ -2,9 +2,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 // Images extraites des screenshots
-const LOGO_FOOTER  = 'https://static.wixstatic.com/media/f4c673_e47b03f2fb7e4abeaefbc943276b6819~mv2.png/v1/fill/w_29,h_29,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/f4c673_e47b03f2fb7e4abeaefbc943276b6819~mv2.png'
-const LOGO_ANNIV   = 'https://static.wixstatic.com/media/3e33e8_c1998929197146c49b8fdc1719f78436~mv2.png/v1/fill/w_383,h_119,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Anniversaire3_Anniversaire%20copie.png'
-const LOGO_AFPMA   = 'https://static.wixstatic.com/media/3e33e8_2c25eef1b0b34913b8c40b83b01d4d7f~mv2.jpg/v1/fill/w_165,h_101,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/CduIZi0oWoT2IsfW_edited.jpg'
+const LOGO_FOOTER = '/images/logo/icon-32.png'
+const LOGO_ANNIV = '/images/logo/anniversaire.png'
+const LOGO_AFPMA = '/images/logo/afpma-rfcp.jpg'
 
 // Galerie bande photos (screenshots image 2)
 const GALLERY = [
@@ -22,59 +22,57 @@ export default function Footer() {
   return (
     <footer>
       {/* ── Bande photos horizontale ── */}
-      <div className="flex overflow-hidden" style={{ height: '120px' }}>
-        {GALLERY.map((src, i) => (
-          <div key={i} className="relative flex-1 min-w-[120px]">
+      <div className="flex overflow-hidden" style={{ height: '80px' }}>
+        {GALLERY.map((src) => (
+          <div key={src} className="relative flex-1 min-w-[120px]">
             <Image src={src} alt="" fill className="object-cover" unoptimized />
           </div>
         ))}
       </div>
 
       {/* ── Footer principal terracotta ── */}
-      <div className="bg-[#c4613a] px-8 py-10">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
+      <div className="bg-[#b35339] px-4 py-3 md:px-12 md:py-3">
+        <div className="grid w-full grid-cols-1 items-center gap-5 md:grid-cols-[1.05fr_1fr_1.35fr] md:gap-12">
 
           {/* Colonne 1 : identité */}
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col items-start gap-0 text-left">
             <div className="flex items-center gap-2">
-              <Image src={LOGO_FOOTER} alt="Logo" width={29} height={29} unoptimized />
-              <span className="font-raleway font-bold text-[11px] tracking-[0.12em] uppercase text-white">
+              <Image src={LOGO_FOOTER} alt="Logo" width={35} height={35} />
+              <span className="font-raleway text-[24px] font-bold leading-none text-white md:text-[30px]">
                 La Maison en Paille
               </span>
             </div>
-            <p className="font-raleway text-[10px] text-white/70 tracking-wider">
+            <p className="font-raleway text-[12px] font-semibold leading-tight text-[#f4e9dc] md:text-[18px]">
               © Tous droits réservés 2026
             </p>
             <Link href="/mentions-legales"
-              className="font-raleway text-[10px] tracking-wider text-white/60 hover:text-white underline underline-offset-2">
+              className="font-raleway text-[16px] font-semibold text-[#f4e9dc] underline underline-offset-2 hover:text-white md:text-[18px]">
               Mentions légales
             </Link>
           </div>
 
           {/* Colonne 2 : logo anniversaire */}
-          <div className="flex flex-col items-center gap-4">
+          <div className="flex flex-col items-center justify-center md:items-start md:pl-6">
             <Image src={LOGO_ANNIV} alt="André de Bouter fête ses formations — 25 ans Paille Terre Chaux / 10 ans Poêle de Masse"
-              width={320} height={100} className="object-contain" unoptimized />
+              width={420} height={130} className="h-auto w-[360px] object-contain md:w-[450px]" />
           </div>
 
           {/* Colonne 3 : organisme + AFPMA */}
-          <div className="flex flex-col gap-4">
-            <div>
-              <p className="font-raleway font-bold text-[10px] tracking-[0.1em] uppercase text-white mb-1">
+          <div className="flex w-full items-center justify-between gap-6 md:gap-10 md:pl-6">
+            <div className="max-w-[430px] space-y-2 text-center md:space-y-3">
+              <p className="font-raleway text-[14px] font-bold leading-tight text-[#f4e9dc] md:text-[16px]">
                 Organisme de formation.
               </p>
-              <p className="font-raleway text-[10px] text-white/70 leading-relaxed">
-                Déclaration d&apos;activité enregistrée sous le n° 75160129316
+              <p className="font-raleway text-[10px] font-semibold leading-[1.2] text-[#f4e9dc] md:text-[14px]">
+                Déclaration d'activité enregistrée sous le n° 75160129316
                 auprès de la préfète de région Nouvelle-Aquitaine.
               </p>
-            </div>
-            <div>
-              <p className="font-raleway text-[10px] text-white/60 mb-2">
-                Membre de l&apos;AFPMA et du RFCP
+              <p className="font-raleway text-center text-[11px] leading-tight text-[#e4d7cb] md:text-[14px]">
+                Membre de l'AFPMA et du RFCP
               </p>
-              <Image src={LOGO_AFPMA} alt="AFPMA & RFCP" width={130} height={80}
-                className="object-contain" unoptimized />
             </div>
+            <Image src={LOGO_AFPMA} alt="AFPMA & RFCP" width={205} height={126}
+              className="ml-auto h-auto w-[120px] object-contain md:w-[350px]" />
           </div>
 
         </div>

@@ -8,19 +8,12 @@ export const metadata = {
     "Formations en construction naturelle animées par André de Bouter depuis 25 ans. Paille Terre Chaux, Poêle de masse, Photovoltaïque. Charente (16).",
 };
 
-// Images Wixstatic extraites du site réel
-const IMG_PAILLE =
-  "https://static.wixstatic.com/media/3e33e8_c7ce8044bc594a609f7c72f370d79c9c~mv2.jpg/v1/crop/x_59,y_0,w_1122,h_1748/fill/w_314,h_413,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Fonds3.jpg";
-const IMG_TERRE =
-  "https://static.wixstatic.com/media/3e33e8_d95d5a776364461ab0e8f33345cb57f1~mv2.jpg/v1/crop/x_59,y_0,w_1122,h_1748/fill/w_309,h_413,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Fonds2.jpg";
-const IMG_BANDEAU =
-  "https://static.wixstatic.com/media/3e33e8_d74efc6c8f1f4e95800c902d07a36027~mv2.jpg/v1/fill/w_381,h_1920,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3e33e8_d74efc6c8f1f4e95800c902d07a36027~mv2.jpg";
-const IMG_PORTE =
-  "https://static.wixstatic.com/media/f4c673_bfb45c777c99497f897266941e875ff9~mv2.png/v1/fill/w_475,h_285,al_c,q_85,enc_avif,quality_auto/f4c673_bfb45c777c99497f897266941e875ff9~mv2.png";
-const IMG_GIF =
-  "https://static.wixstatic.com/media/f4c673_9e107a544f7a4064a4a68de072001bac~mv2.gif";
+const IMG_PAILLE = "/images/home/fond3.jpg";
+const IMG_TERRE = "/images/home/fond2.jpg";
+const IMG_PORTE = "/images/home/porte-ouverte-2026.png";
+const IMG_GIF = "/images/home/pdm-infra-rouge.gif";
+const BUTTON_BG = "#CB664A";
 
-// Les 3 cartes formations — couleurs exactes des screenshots
 const FORMATIONS = [
   {
     slug: "paille-terre-chaux",
@@ -29,8 +22,17 @@ const FORMATIONS = [
     duree: "Stage 6 jours",
     desc: "Apprenez les clés pour réaliser votre projet durable, performant et confortable.",
     img: IMG_PAILLE,
-    // Couleur de fond de la partie haute de la carte (screenshot : jaune doré)
     cardBg: "#c8a040",
+    titleSize: "40px",
+    titleMaxWidth: "245px",
+    titleLineHeight: "0.92",
+    subtitleSize: "23px",
+    subtitleMaxWidth: "250px",
+    subtitleMarginTop: "0.85rem",
+    descMaxWidth: "280px",
+    cardWidth: "314px",
+    cardHeight: "413px",
+    panelHeight: "255px",
   },
   {
     slug: "poele-de-masse",
@@ -40,6 +42,16 @@ const FORMATIONS = [
     desc: "Les apports du stage vous permettent de construire ensuite votre poêle personnalisé. Optionnel : four, eau chaude, banc chauffé.",
     img: IMG_TERRE,
     cardBg: "#c06030",
+    titleSize: "40px",
+    titleMaxWidth: "250px",
+    titleLineHeight: "0.94",
+    subtitleSize: "23px",
+    subtitleMaxWidth: "260px",
+    subtitleMarginTop: "0.95rem",
+    descMaxWidth: "300px",
+    cardWidth: "320px",
+    cardHeight: "413px",
+    panelHeight: "255px",
   },
   {
     slug: "photovoltaique",
@@ -49,27 +61,26 @@ const FORMATIONS = [
     desc: "Pour toute personne désirant être davantage autonome, résiliente et économe dans sa consommation d'énergie.",
     img: null,
     cardBg: "#6a8e9a",
+    titleSize: "40px",
+    titleMaxWidth: "270px",
+    titleLineHeight: "0.98",
+    subtitleSize: "23px",
+    subtitleMaxWidth: "240px",
+    subtitleMarginTop: "0.9rem",
+    descMaxWidth: "290px",
+    cardWidth: "327px",
+    cardHeight: "413px",
+    panelHeight: "255px",
   },
 ];
 
 export default function HomePage() {
   return (
-    // Fond principal : grande texture paille via l'image du site
-    <div
-      className="relative min-h-screen"
-      style={{
-        backgroundImage: `url(${IMG_BANDEAU})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed",
-      }}
-    >
-      {/* Overlay très léger pour lisibilité */}
-      <div className="absolute inset-0 bg-[#c8824a]/60 pointer-events-none" />
-
+    <div className="relative min-h-screen">
       <div className="relative z-10">
-        {/* ── Bandeau newsletter ── */}
-        <div className="bg-white/95 py-3 px-6 flex items-center justify-end gap-4 max-w-[500px] mx-auto mt-6 rounded-xl">
+
+        {/* Bandeau newsletter */}
+        <div className="bg-white/95 py-3 px-6 flex items-center justify-end gap-4 max-w-[540px] mx-auto mt-6 rounded-xl shadow-md">
           <p className="font-raleway text-sm text-[#3d1a0e]">
             Restons en contact avec les <strong>Nouv&apos;d&apos;André</strong>
           </p>
@@ -78,7 +89,7 @@ export default function HomePage() {
           </Link>
         </div>
 
-        {/* ── Titre FORMATIONS 2026 ── */}
+        {/* Titre */}
         <div className="text-center py-10">
           <div className="flex items-center justify-center gap-4">
             <div className="flex-1 max-w-[120px] h-px bg-white/60" />
@@ -95,67 +106,111 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* ── Grille 3 formations ── */}
-        <div className="max-w-5xl mx-auto px-6 pb-10 grid grid-cols-1 md:grid-cols-3 gap-5 ">
+        {/* Cards formations */}
+        <div className="mx-auto grid max-w-[1040px] grid-cols-1 gap-4 px-6 pb-10 md:flex md:items-start md:justify-center md:gap-[12px]">
           {FORMATIONS.map((f) => (
             <Link
               key={f.slug}
               href={`/formations/${f.slug}`}
-              className="group flex flex-col overflow-hidden shadow-lg hover:shadow-2xl transition-shadow hover:translate-y-1   duration-300 rounded-xl"
+              className="group flex flex-col overflow-visible rounded-sm shadow-[0_8px_18px_rgba(0,0,0,0.22)] transition-all duration-300 hover:-translate-y-1 md:flex-shrink-0"
+              style={{ width: "100%", maxWidth: f.cardWidth, minHeight: f.cardHeight }}
             >
-              {/* Partie haute colorée : image OU fond couleur + texte titre */}
+              {/* Partie image */}
               <div
-                className="relative flex flex-col items-center justify-center text-center px-5 py-8 min-h-[260px]"
-                style={{ backgroundColor: f.cardBg }}
+                className="relative flex flex-col items-center justify-start overflow-visible px-4 pt-6 text-center md:px-5 md:pt-5"
+                style={{ backgroundColor: f.cardBg, height: f.panelHeight }}
               >
-                {/* Image de fond de la carte */}
-                {f.img && (
-                  <Image
-                    src={f.img}
-                    alt={f.titre}
-                    fill
-                    className="object-cover opacity-80"
-                    unoptimized
-                  />
-                )}
-                {/* Overlay pour lisibilité du texte */}
-                <div
-                  className="absolute inset-0"
-                  style={{ backgroundColor: `${f.cardBg}99` }}
-                />
+                <div className="absolute inset-0 overflow-hidden">
+                  {f.img && (
+                    <Image
+                      src={f.img}
+                      alt={f.titre}
+                      fill
+                      className="object-cover"
+                    />
+                  )}
 
-                {/* Titres sur la carte */}
-                <div className="relative z-10 flex flex-col items-center gap-3">
+                  {/* Overlay dégradé */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
+                </div>
+
+                {/* Titre + sous-titre */}
+                <div className="relative z-10 flex w-full flex-col items-center">
                   <h2
-                    className="font-raleway font-black text-white uppercase leading-tight "
+                    className="font-fredericka text-white uppercase"
                     style={{
-                      fontSize: "clamp(1.4rem, 2.5vw, 2rem)",
-                      letterSpacing: "0.04em",
-                      textShadow: "0 2px 6px rgba(0,0,0,0.4)",
+                      fontSize: f.titleSize,
+                      maxWidth: f.titleMaxWidth,
+                      lineHeight: f.titleLineHeight,
+                      letterSpacing: f.slug === "photovoltaique" ? "-0.01em" : "0.005em",
+                      textShadow: "0 3px 8px rgba(0,0,0,0.35)",
                       whiteSpace: "pre-line",
                     }}
                   >
-                    {f.titre}
+                    {f.slug === "photovoltaique" ? (
+                      <>
+                        <span style={{ fontSize: "35px", display: "block", lineHeight: "0.98" }}>
+                          Autonomie
+                        </span>
+                        <span style={{ fontSize: "27px", display: "block", lineHeight: "0.98" }}>
+                          Photovoltaique
+                        </span>
+                      </>
+                    ) : (
+                      f.titre
+                    )}
                   </h2>
                   <p
-                    className="font-raleway font-bold text-white uppercase"
+                    className="font-raleway font-extrabold uppercase text-white"
                     style={{
-                      fontSize: "0.6rem",
-                      letterSpacing: "0.15em",
+                      marginTop: f.subtitleMarginTop,
+                      fontSize: f.subtitleSize,
+                      letterSpacing: "0.02em",
+                      lineHeight: f.slug === "photovoltaique" ? "1.08" : "1.14",
+                      maxWidth: f.subtitleMaxWidth,
                       whiteSpace: "pre-line",
-                      textShadow: "0 1px 4px rgba(0,0,0,0.4)",
+                      textShadow: "0 1px 4px rgba(0,0,0,0.45)",
                     }}
                   >
-                    {f.sousTitre}
+                    {f.slug === "photovoltaique" ? (
+                      <>
+                        <span
+                          style={{
+                            display: "block",
+                            fontSize: "18px",
+                            color: "#D4CDBF",
+                            lineHeight: "1.05",
+                          }}
+                        >
+                          Par Sébastien Deroo
+                        </span>
+                        <span style={{ display: "block", marginTop: "0.06rem" }}>
+                          Être plus autonome en énergie
+                        </span>
+                      </>
+                    ) : (
+                      f.sousTitre
+                    )}
                   </p>
-                  {/* Bouton terracotta arrondi */}
-                  <span className="btn-terracotta mt-2">{f.duree}</span>
+                </div>
+
+                {/* Bouton qui chevauche la séparation */}
+                <div className="absolute bottom-0 left-1/2 z-20 flex -translate-x-1/2 translate-y-1/2 justify-center">
+                  <span
+                    className="inline-flex h-[35px] w-[208px] items-center justify-center rounded-[14px] border-b-[4px] border-[#8e3822] font-raleway text-[0.8rem] font-extrabold uppercase tracking-[0.04em] text-white shadow-[0_5px_10px_rgba(0,0,0,0.18)]"
+                    style={{ backgroundColor: BUTTON_BG }}
+                  >
+                    {f.duree}
+                  </span>
                 </div>
               </div>
 
-              {/* Partie basse blanche : description */}
-              <div className="bg-white px-5 py-5 flex-1">
-                <p className="text-center text-sm text-[#4a4a4a] leading-relaxed">
+              {/* Partie basse blanche */}
+              <div className="flex flex-1 flex-col items-center bg-white/90 px-5 pb-5 pt-10">
+                <p
+                  className="text-center font-raleway text-[0.9rem] leading-[1.3] text-[#cb653e] md:text-[0.95rem]"
+                  style={{ maxWidth: f.descMaxWidth }}
+                >
                   {f.desc}
                 </p>
               </div>
@@ -163,23 +218,22 @@ export default function HomePage() {
           ))}
         </div>
 
-        {/* ── Texte central ── */}
+        {/* Texte intro bas */}
         <div className="max-w-3xl mx-auto px-6 pb-14 text-center">
           <p
             className="text-white text-sm leading-relaxed"
             style={{ textShadow: "0 1px 6px rgba(0,0,0,0.5)" }}
           >
-            Vous souhaitez vous former pour pouvoir concrétiser votre projet ?
-            Vous voulez vous assurer de réaliser votre rêve dans de bonnes
-            conditions ? Je vous transmets les clés de compréhension et le
-            savoir faire pour réaliser vos projets avec confiance et plaisir.
+            Vous souhaitez vous former pour concrétiser votre projet ? Vous
+            voulez vous assurer de le réaliser dans de bonnes conditions ? Je
+            vous transmets les clés de compréhension et le savoir-faire pour
+            avancer avec confiance et plaisir.
           </p>
         </div>
 
-        {/* ── Section Porte Ouverte — fond terracotta ── */}
+        {/* Section porte ouverte */}
         <div className="bg-[#c4613a] py-12 px-6">
           <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-            {/* Image journée nationale */}
             <div className="flex justify-center">
               <Image
                 src={IMG_PORTE}
@@ -187,11 +241,9 @@ export default function HomePage() {
                 width={380}
                 height={228}
                 className="object-contain w-full max-w-[380px]"
-                unoptimized
               />
             </div>
 
-            {/* Texte porte ouverte */}
             <div className="text-center">
               <h2
                 className="font-raleway font-black text-white uppercase underline underline-offset-4 decoration-2"
@@ -218,7 +270,6 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* GIF thermique */}
             <div className="flex justify-center">
               <Image
                 src={IMG_GIF}
@@ -226,11 +277,11 @@ export default function HomePage() {
                 width={280}
                 height={210}
                 className="object-contain"
-                unoptimized
               />
             </div>
           </div>
         </div>
+
       </div>
     </div>
   );

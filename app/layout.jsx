@@ -1,6 +1,14 @@
 import './globals.css'
+import { Fredericka_the_Great } from 'next/font/google'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
+
+const fredericka = Fredericka_the_Great({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-fredericka',
+})
 
 export const metadata = {
   title: {
@@ -13,7 +21,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fr">
+    <html lang="fr" className={fredericka.variable}>
       <body className="antialiased">
         <Header />
         <main>{children}</main>

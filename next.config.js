@@ -8,6 +8,18 @@ const nextConfig = {
       { protocol: 'https', hostname: 'www.lamaisonenpaille.com' },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/andré-de-bouter',
+        destination: '/andre-de-bouter',
+      },
+      {
+        source: '/andr%C3%A9-de-bouter',
+        destination: '/andre-de-bouter',
+      },
+    ]
+  },
   experimental: {
     serverComponentsExternalPackages: ['mysql2', 'argon2'],
   },

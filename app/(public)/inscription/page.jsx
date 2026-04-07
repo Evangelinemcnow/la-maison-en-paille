@@ -46,7 +46,6 @@ export default function InscriptionPage() {
           >
             05 45 66 27 68
           </a>
-          &nbsp;·&nbsp;
           <a
             href="mailto:contact@lamaisonenpaille.com?subject=INSCRIPTION"
             className="text-[#c8a040] hover:text-white transition-colors font-bold"

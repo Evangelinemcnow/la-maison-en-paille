@@ -10,7 +10,7 @@ export default function PageBackground({ children }) {
       <div
         className="fixed inset-0 -z-10 hidden md:block"
         style={{
-          backgroundImage: "url('/images/formations/bg-texture.jpg')",
+          backgroundImage: "url('/images/home/fond3.jpg')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
