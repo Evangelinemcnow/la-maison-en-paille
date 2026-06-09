@@ -80,7 +80,7 @@ export default function EditRealisationPage({ params }) {
     }
   }
 
-  // ── États ──────────────────────────────────────────────
+  //  États
 
   if (loading) {
     return (
@@ -103,7 +103,7 @@ export default function EditRealisationPage({ params }) {
     );
   }
 
-  // ── Rendu ──────────────────────────────────────────────
+  // Rendu
 
   return (
     <div className="p-8">

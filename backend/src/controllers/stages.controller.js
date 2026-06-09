@@ -12,7 +12,7 @@ export async function getAll(req, res) {
   }
 }
 
-// GET /api/stages/all — tous (dashboard)
+// GET /api/stages/all — tous les stages & options (dashboard)
 export async function getAllAdmin(_req, res) {
   try {
     const rows = await Stage.findAllAdmin();
