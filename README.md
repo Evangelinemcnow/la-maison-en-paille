@@ -146,4 +146,4 @@ la-maison-en-paille/
 ---
 
 _Projet réalisé dans le cadre du stage AFEC Angoulême 2026_  
-_Stack : Node.js · Express · Next.js 14 · MySQL · JWT · Render · Railway_
+_Stack : Node.js · Express · Next.js 14 · MySQL · JWT · Render · Railway · Argon2 ·_
