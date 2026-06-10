@@ -20,26 +20,26 @@ cd la-maison-en-paille
 2. Installez les dépendances backend :
 
 ```bash
-cd backend
+cd server
 npm install
 ```
 
 3. Installez les dépendances frontend :
 
 ```bash
-cd ../frontend
+cd ../client
 npm install
 ```
 
-4. Configurez les variables d'environnement — créez un fichier `.env` dans `/backend` :
+4. Configurez les variables d'environnement — créez un fichier `.env` dans `/server` :
 
 ```env
 PORT=5000
 DB_HOST=localhost
-DB_USER=votre_user
-DB_PASSWORD=votre_mot_de_passe
+DB_USER=db_user
+DB_PASSWORD=db_mot_de_passe
 DB_NAME=la_maison_en_paille
-JWT_SECRET=votre_secret_jwt
+JWT_SECRET=un_secret_jwt
 CLIENT_URL=http://localhost:3000
 NODE_ENV=development
 ```
@@ -50,7 +50,7 @@ NODE_ENV=development
 6. Créez le compte administrateur (à faire une seule fois) :
 
 ```bash
-cd backend
+cd server
 node scripts/createAdmin.js
 ```
 
@@ -60,7 +60,7 @@ node scripts/createAdmin.js
 npm run dev
 ```
 
-8. Lancez le frontend depuis `/frontend` dans un second terminal :
+8. Lancez le frontend depuis `/client` dans un second terminal :
 
 ```bash
 npm run dev
@@ -114,7 +114,7 @@ npm run dev
 
 ```
 la-maison-en-paille/
-├── backend/
+├── server/
 │   ├── scripts/
 │   │   └── createAdmin.js
 │   └── src/
@@ -131,7 +131,7 @@ la-maison-en-paille/
 │       ├── routes/
 │       └── services/
 │           └── mailer.js
-└── frontend/
+└── client/
     ├── app/
     │   ├── (public)/
     │   └── (admin)/
