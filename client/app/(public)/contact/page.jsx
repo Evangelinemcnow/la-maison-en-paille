@@ -352,7 +352,7 @@ export default function ContactPage() {
               {/* Actions */}
               <div className="bg-[#2a1208] p-10 md:p-14 flex flex-col justify-center gap-4">
                 <a
-                  href="mailto:contact@lamaisonenpaille.com?subject=INSCRIPTION"
+                  href="/inscription"
                   className="flex items-center justify-between w-full px-6 py-4 bg-[#BC8A5F] text-[#3D1A0E] font-bold text-sm rounded-xl hover:bg-[#d4a06e] transition-colors"
                 >
                   <span>S&apos;inscrire via le formulaire</span>
